@@ -126,7 +126,7 @@ html {
 .main-nav li:hover a,
 .main-nav li.active a {
     background: #fff;
-    color: #5f3c82;
+    color: #7941b1;
     /* old color: #8c363e */
 }
 
@@ -179,8 +179,7 @@ html {
 
 .menu .social-network ul li a:hover {
     background-color: #fff;
-    color: #7941b1;
-    /* old color: #7941b1 */
+    color: #5f3c82;
 }
 
 .menu .copyright-text {
