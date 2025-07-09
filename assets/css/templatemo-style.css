@@ -126,7 +126,7 @@ html {
 .main-nav li:hover a,
 .main-nav li.active a {
     background: #fff;
-    color: #61368c;
+    color: #5f3c82;
     /* old color: #8c363e */
 }
 
