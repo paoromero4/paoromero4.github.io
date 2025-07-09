@@ -42,7 +42,7 @@ https://templatemo.com/tm-531-reflux
             </div>
             <div class="author-content">
               <h4>Paola Romero</h4>
-              <span>student, something something</span>
+              <span><span id="typed-text"></span></span>
             </div>
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
@@ -507,6 +507,37 @@ https://templatemo.com/tm-531-reflux
       $(window).scroll(function() {
         checkSection();
       });
+    </script>
+    
+    <!-- TypewriterJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+
+    <script>
+    const app = document.getElementById('typed-text');
+
+    const typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 75,
+        deleteSpeed: 50
+    });
+
+    typewriter
+        .typeString('Mechanical Engineer')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('MIT Student')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('Undergraduate Researcher')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('Musician')
+        .pauseFor(2000)
+        .deleteAll()
+        .typeString('Assistant Shop Manager')
+        .pauseFor(2000)
+        .deleteAll()
+        .start();
     </script>
   </body>
 </html>
