@@ -12,6 +12,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+/*
 #page-wraper {
     background: url(../images/page-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -20,7 +21,7 @@ body {
     background-size: cover;
     width: 100%;
 }
-
+*/
 
 /* Basic */
 
@@ -320,6 +321,50 @@ html {
     letter-spacing: 0.5px;
 }
 
+.section-bg-1 {
+    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.section-bg-2 {
+    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.section-bg-3 {
+    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.section-bg-4 {
+    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.section-bg-5 {
+    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
 
 /* Buttons */
 
@@ -391,9 +436,9 @@ button:hover {
 }
 
 
-/* Services */
+/* Teaching & Mentoring */
 
-.my-services .col-md-6 {
+.teaching-mentoring .col-md-6 {
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -468,9 +513,9 @@ button:hover {
 }
 
 
-/* My Work */
+/* Portfolio */
 
-section.my-work .section-heading {
+section.portfolio .section-heading {
     text-align: center;
     padding: 80px 45px 50px 45px;
 }
@@ -630,6 +675,11 @@ figure.snip1321.hover:after {
   opacity: 0.9;
 }
 
+/* Resume */
+section.resume .section-heading{
+    text-align: center;
+    padding: 80px 45px 50px 45px;
+}
 
 /* Contact Me */
 
