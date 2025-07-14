@@ -12,16 +12,17 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/*
+
 #page-wraper {
-    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    /*background: url(../images/page-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 100%;
+    width: 100%; */
+    overflow-x: hidden;
 }
-*/
+
 
 /* Basic */
 
@@ -240,6 +241,10 @@ html {
   width: 20%;
   will-change: transform;
   z-index: 9999 !important;
+}
+
+.menu, #page-wrapper {
+    min-height: 100vh;
 }
 
 .menu-toggle {
