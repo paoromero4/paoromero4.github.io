@@ -104,7 +104,9 @@ html {
 }
 
 .container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .main-nav {
@@ -373,6 +375,7 @@ html {
     background-size: cover;
     width: 100%;
 }
+
 
 /* Buttons */
 
@@ -741,12 +744,13 @@ section.contact-me {
         left: 5%;
     }
 
-    .section {
+    /*.section {
         /*color: #fff;*/
-        width: 65%;
+        /*width: 65%;
         right: 5%;
         left: 30%;
     }
+    */
 }
 
 @media screen and (max-width: 1680px) and (min-width: 846px) { 
