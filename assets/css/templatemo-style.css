@@ -12,7 +12,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-
+/*
 #page-wraper {
     /*background: url(../images/page-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -20,7 +20,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     width: 100%; */
-    overflow-x: hidden;
+    /*overflow-x: hidden;
 }
 
 
