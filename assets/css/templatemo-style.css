@@ -216,6 +216,7 @@ html {
 
 .menu {
     text-align: center;
+    background-color: #5f3c82; /* TESTING THIS */
 }
 
 .menu::-webkit-scrollbar {
