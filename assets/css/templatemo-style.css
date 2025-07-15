@@ -300,13 +300,14 @@ html {
 /* Section */
 
 .section {
-    color: #fff;
-    width: 100%;
+    /*color: #fff;*/
+    margin-left: 20%;
+    width: 80%;
     /*right: 10%;
     left: 35%;*/
+    padding: 80px 0;
     position: relative;
     min-height: 100vh;
-    padding: 80px 0;
     border-bottom: 3px solid rgba(250, 250, 250, 0.25);
 }
 
@@ -744,13 +745,13 @@ section.contact-me {
         left: 5%;
     }
 
-    /*.section {
+    .section {
         /*color: #fff;*/
-        /*width: 65%;
+        width: 65%;
         right: 5%;
         left: 30%;
     }
-    */
+    
 }
 
 @media screen and (max-width: 1680px) and (min-width: 846px) { 
@@ -850,9 +851,9 @@ section.contact-me {
         display: inline-block;
     }
     .section {
-        width: 94%;
-        right: 3%;
-        left: 3%;
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 20px;
     }
     .isotope-item {
         width: 94%;
