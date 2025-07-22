@@ -433,7 +433,7 @@ footer {
 
 /* navbar colors */
 .custom-navbar .nav li:nth-child(1) a:hover {
-  	background-color: #a67dcc !important; /* Purple */
+  	background-color: #bc9adb !important; /* Purple */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(2) a:hover {
@@ -441,7 +441,7 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(3) a:hover {
-  	background-color: #7689df !important; /* Indigo */
+  	background-color: #8699ee !important; /* Indigo */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(4) a:hover {
@@ -449,7 +449,7 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(5) a:hover {
-  	background-color: #eeb243 !important; /* Orange */
+  	background-color: #ffb24c !important; /* eeb243 Orange */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(6) a:hover {
