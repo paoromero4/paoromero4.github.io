@@ -80,31 +80,6 @@ p {
   	transition: all 0.3s ease-in-out;
 }
 */
-.custom-navbar .nav li:nth-child(1) a:hover {
-  	background-color: #9b59b6 !important; /* Purple */
-    transition: all 0.3s ease-in-out;
-}
-.custom-navbar .nav li:nth-child(2) a:hover {
-  	background-color: #e91e63 !important; /* Pink */
-    transition: all 0.3s ease-in-out;
-}
-.custom-navbar .nav li:nth-child(3) a:hover {
-  	background-color: #3f51b5; /* Indigo */
-    transition: all 0.3s ease-in-out;
-}
-.custom-navbar .nav li:nth-child(4) a:hover {
-  	background-color: #00bcd4; /* Cyan */
-    transition: all 0.3s ease-in-out;
-}
-.custom-navbar .nav li:nth-child(5) a:hover {
-  	background-color: #ff9800; /* Orange */
-    transition: all 0.3s ease-in-out;
-}
-.custom-navbar .nav li:nth-child(6) a:hover {
-  	background-color: #4caf50; /* Green */
-    transition: all 0.3s ease-in-out;
-}
-
 .custom-navbar .nav > li > a:focus {
   	background-color: transparent;
   	outline: none;
@@ -454,4 +429,30 @@ footer {
     font-size: 16px;
     padding-bottom: 40px;
   }
+}
+
+/* navbar colors */
+.custom-navbar .nav li:nth-child(1) a:hover {
+  	background-color: #9b59b6 !important; /* Purple */
+    transition: all 0.3s ease-in-out;
+}
+.custom-navbar .nav li:nth-child(2) a:hover {
+  	background-color: #e91e63 !important; /* Pink */
+    transition: all 0.3s ease-in-out;
+}
+.custom-navbar .nav li:nth-child(3) a:hover {
+  	background-color: #3f51b5 !important; /* Indigo */
+    transition: all 0.3s ease-in-out;
+}
+.custom-navbar .nav li:nth-child(4) a:hover {
+  	background-color: #00bcd4 !important; /* Cyan */
+    transition: all 0.3s ease-in-out;
+}
+.custom-navbar .nav li:nth-child(5) a:hover {
+  	background-color: #ff9800 !important; /* Orange */
+    transition: all 0.3s ease-in-out;
+}
+.custom-navbar .nav li:nth-child(6) a:hover {
+  	background-color: #4caf50 !important; /* Green */
+    transition: all 0.3s ease-in-out;
 }
