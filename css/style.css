@@ -247,7 +247,7 @@ p {
 .filter-wrapper li:nth-child(2) a:hover,
 .filter-wrapper li:nth-child(2) a:focus,
 .filter-wrapper li:nth-child(2) a.selected {
-  background-color: #8699ee; /* Pink */
+  background-color: #dd668e; /* Pink */
   color: white;
 }
 
@@ -255,7 +255,7 @@ p {
 .filter-wrapper li:nth-child(3) a:hover,
 .filter-wrapper li:nth-child(3) a:focus,
 .filter-wrapper li:nth-child(3) a.selected {
-  background-color: #36c1d3; /* Indigo */
+  background-color: #8699ee; /* Indigo */
   color: white;
 }
 
@@ -263,7 +263,7 @@ p {
 .filter-wrapper li:nth-child(4) a:hover,
 .filter-wrapper li:nth-child(4) a:focus,
 .filter-wrapper li:nth-child(4) a.selected {
-  background-color: #ffb24c; /* Cyan */
+  background-color: #36c1d3; /* Cyan */
   color: white;
 }
 
@@ -271,7 +271,7 @@ p {
 .filter-wrapper li:nth-child(5) a:hover,
 .filter-wrapper li:nth-child(5) a:focus,
 .filter-wrapper li:nth-child(5) a.selected {
-  background-color: #64b166; /* Cyan */
+  background-color: #ffb24c; /* Cyan */
   color: white;
 }
 
@@ -279,7 +279,7 @@ p {
 .filter-wrapper li:nth-child(6) a:hover,
 .filter-wrapper li:nth-child(6) a:focus,
 .filter-wrapper li:nth-child(6) a.selected {
-  background-color: #00bcd4; /* Cyan */
+  background-color: #64b166; /* Cyan */
   color: white;
 }
 
@@ -333,6 +333,7 @@ p {
 /* resume section */
 #resume {
   text-align: center;
+  background: #c9b8d1;
 }
 
 /* contact section */
