@@ -437,19 +437,19 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(2) a:hover {
-  	background-color: #e45d8a !important; /* Pink */
+  	background-color: #f5719d !important; /* Pink */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(3) a:hover {
-  	background-color: #7082e4 !important; /* Indigo */
+  	background-color: #7689df !important; /* Indigo */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(4) a:hover {
-  	background-color: #2bb6c9 !important; /* Cyan */
+  	background-color: #36c1d3 !important; /* Cyan */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(5) a:hover {
-  	background-color: #db9c3e !important; /* Orange */
+  	background-color: #eeb243 !important; /* Orange */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(6) a:hover {
