@@ -81,11 +81,11 @@ p {
 }
 */
 .custom-navbar .nav li:nth-child(1) a:hover {
-  	background-color: #9b59b6; /* Purple */
+  	background-color: #9b59b6 !important; /* Purple */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(2) a:hover {
-  	background-color: #e91e63; /* Pink */
+  	background-color: #e91e63 !important; /* Pink */
     transition: all 0.3s ease-in-out;
 }
 .custom-navbar .nav li:nth-child(3) a:hover {
