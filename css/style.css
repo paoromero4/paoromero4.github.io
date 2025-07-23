@@ -487,19 +487,19 @@ footer {
 
 /* navbar colors */
 .custom-navbar .nav li:nth-child(1) a:hover {
-  	background-color: #bc9adb !important; /* Purple */
+  	background-color: #bc9adb; /* Purple */
     transition: all 0.3s ease-in-out;
     font-weight: 800;
 }
 .custom-navbar .nav li:nth-child(2) a:hover {
   	background-color: #f5719d !important; /* Pink */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
   }
 .custom-navbar .nav li:nth-child(3) a:hover {
   	background-color: #8699ee !important; /* Indigo */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
 
 }
 .custom-navbar .nav li:nth-child(4) a:hover {
