@@ -69,7 +69,7 @@ p {
 .custom-navbar .nav li a {
     color: #505050;
     font-size: 13px;
-    /*font-weight: bold;*/
+    font-weight: 600;
     letter-spacing: 4px;
     padding-right: 20px;
     padding-left: 20px;
@@ -489,7 +489,7 @@ footer {
 .custom-navbar .nav li:nth-child(1) a:hover {
   	background-color: #bc9adb; /* Purple */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 .custom-navbar .nav li:nth-child(2) a:hover {
   	background-color: #f5719d; /* Pink */
@@ -505,15 +505,15 @@ footer {
 .custom-navbar .nav li:nth-child(4) a:hover {
   	background-color: #36c1d3; /* Cyan */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 .custom-navbar .nav li:nth-child(5) a:hover {
   	background-color: #ffb24c; /* eeb243 Orange */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 .custom-navbar .nav li:nth-child(6) a:hover {
   	background-color: #64b166; /* Green */
     transition: all 0.3s ease-in-out;
-    font-weight: 800;
+    font-weight: 800 !important;
 }
