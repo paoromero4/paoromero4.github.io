@@ -264,7 +264,7 @@ http://www.templatemo.com/tm-472-blaster
 		</div>
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<form action="https://formspree.io/f/xgvzyrkr" method="post">
+				<form id="contact-form" action="https://formspree.io/f/xgvzyrkr" method="post">
 					<div class="col-md-6 col-sm-6">
 						<input name="name" required type="text" class="form-control" id="name" placeholder="Name">
 				  	  	<input name="email" required type="email" class="form-control" id="email" placeholder="Email">
@@ -277,6 +277,11 @@ http://www.templatemo.com/tm-472-blaster
 						<input name="submit" type="submit" class="form-control" id="submit" value="SEND MESSAGE">
 					</div>
 				</form>
+
+                <div id="thank-you-message" style="display: none;">
+                    <h3>Thank you for your message!</h3>
+                    <p>I’ll get back to you as soon as I can.</p>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -356,6 +361,44 @@ http://www.templatemo.com/tm-472-blaster
         .pauseFor(2000)
         .deleteAll()
         .start();
+</script>
+
+<!--Contact me submission-->
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = e.target;
+
+    // Use fetch to submit the form via AJAX
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('thank-you-message').style.display = 'block';
+        localStorage.setItem('submittedTime', Date.now());
+      } else {
+        alert('There was a problem. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Something went wrong!');
+    });
+  });
+
+  // Block form if submitted less than 30 minutes ago
+  window.addEventListener('DOMContentLoaded', () => {
+    const lastSubmit = localStorage.getItem('submittedTime');
+    if (lastSubmit && Date.now() - lastSubmit < 30 * 60 * 1000) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('thank-you-message').style.display = 'block';
+    }
+  });
 </script>
 
 </body>
