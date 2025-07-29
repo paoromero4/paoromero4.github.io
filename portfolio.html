@@ -18,9 +18,8 @@
                		<div class="iso-box-section wow fadeIn" data-wow-delay="0.9s">
                			<div class="iso-box-wrapper col4-iso-box">
 
-               				
-
-                            <div class="iso-box html wordpress mobile col-lg-4 col-md-4 col-sm-6 col-xs-6 project-card">
+                            <div class="iso-box html wordpress mobile col-lg-4 col-md-4 col-sm-6 col-xs-6 project-card"
+                                        data-project-id="project1">
                                 <img src="images/portfolio-img1.jpg" alt="Project 1" />
                                 <div class="overlay">
                                     <div class="text">
@@ -30,7 +29,8 @@
                                 </div>
                             </div>
 
-               				 <div class="iso-box wordpress col-md-4 col-lg-4 col-sm-6 col-xs-6 project-card">
+               				 <div class="iso-box wordpress col-md-4 col-lg-4 col-sm-6 col-xs-6 project-card"
+                                        data-project-id="project2">
                                 <img src="images/portfolio-img2.jpg" alt="Project 1" />
                                 <div class="overlay">
                                     <div class="text">
@@ -75,4 +75,16 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- project modals -->
+<div id="project1" class="project-detail" style="display: none;">
+  <h2>Designing a Drone</h2>
+  <p>Built a quadcopter from scratch using custom PCBs and 3D-printed parts...</p>
+  <img src="images/portfolio-img1.jpg" alt="drone project" />
+</div>
+
+<div id="project2" class="project-detail" style="display: none;">
+  <h2>Automated Hydroponics System</h2>
+  <p>Controlled via Raspberry Pi, with real-time nutrient tracking and scheduling.</p>
 </div>
