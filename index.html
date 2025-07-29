@@ -318,37 +318,5 @@ http://www.templatemo.com/tm-472-blaster
   });
 </script>
 
-<!--Modal JS-->
-<script>
-  // Load portfolio.html into memory on page load
-  let portfolioData;
-
-  fetch('portfolio.html')
-    .then(res => res.text())
-    .then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      portfolioData = doc;
-    });
-
-  // Attach click listeners to project thumbnails
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const projectId = card.getAttribute('data-project-id');
-      const content = portfolioData.getElementById(projectId);
-
-      if (content) {
-        document.getElementById('modal-body').innerHTML = content.innerHTML;
-        document.getElementById('modal').style.display = 'block';
-      }
-    });
-  });
-
-  // Close modal
-  document.getElementById('modal-close').addEventListener('click', () => {
-    document.getElementById('modal').style.display = 'none';
-  });
-</script>
-
 </body>
 </html>

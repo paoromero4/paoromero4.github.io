@@ -88,3 +88,75 @@
   <h2>Automated Hydroponics System</h2>
   <p>Controlled via Raspberry Pi, with real-time nutrient tracking and scheduling.</p>
 </div>
+
+<!--Modal container-->
+<div id="modal-overlay" style="display: none;">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!--Modal JS-->
+<script>
+  // Load portfolio.html into memory on page load
+  let portfolioData;
+
+  fetch('portfolio.html')
+    .then(res => res.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      portfolioData = doc;
+    });
+
+  // Attach click listeners to project thumbnails
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project-id');
+      const content = portfolioData.getElementById(projectId);
+
+      if (content) {
+        document.getElementById('modal-body').innerHTML = content.innerHTML;
+        document.getElementById('modal').style.display = 'block';
+      }
+    });
+  });
+
+  // Close modal
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('modal').style.display = 'none';
+  });
+</script>
+
+<script>
+  // Wire up the modal system
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project-id');
+      const projectContent = document.getElementById(projectId);
+
+      if (projectContent) {
+        // Clone the modal content
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = projectContent.innerHTML;
+
+        // Show the modal
+        document.getElementById('modal-overlay').style.display = 'flex';
+      }
+    });
+  });
+
+  // Close modal when "x" is clicked
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('modal-overlay').style.display = 'none';
+  });
+
+  // Optional: click outside modal-content closes modal
+  document.getElementById('modal-overlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modal-overlay')) {
+      document.getElementById('modal-overlay').style.display = 'none';
+    }
+  });
+</script>
+
