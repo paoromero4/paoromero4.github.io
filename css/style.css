@@ -170,6 +170,9 @@ p {
 #about .col-md-6 p {
   padding-bottom: 30px;
 }
+#about .heading {
+  padding-bottom: 30px;
+}
 #about span {
   display: block;
   padding-bottom: 6px;
