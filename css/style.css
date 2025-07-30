@@ -300,8 +300,7 @@ p {
   transform: translate(-50%, -50%);  /* shift it back by half its own width & height */
 }
 
-.close-button,
-.modal-trigger-button {
+.close-button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background: black;
@@ -311,8 +310,7 @@ p {
   border-radius: 4px;
 }
 
-.close-button:hover,
-.modal-trigger-button:hover {
+.close-button:hover {
   background: #333;
 }
 

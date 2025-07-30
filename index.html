@@ -327,35 +327,33 @@ http://www.templatemo.com/tm-472-blaster
 
       // Now the modal exists, so add listeners
       const modal = document.getElementById('customModal');
-      const openBtn = document.getElementById('openModal');
       const closeBtn = document.getElementById('closeModal');
 
-      if (modal && openBtn && closeBtn) {
-        // Fix: Force reflow before showing modal
-        openBtn.addEventListener('click', () => {
-          modal.classList.remove('show');
-          void modal.offsetWidth; // force reflow
-          modal.classList.add('show');
-        });
-
-        closeBtn.addEventListener('click', () => {
-          modal.classList.remove('show');
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-             modal.classList.remove('show');
-            }
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-              modal.classList.remove('show');
-            }
-        });
-
+       function showModal() {
+        modal.classList.remove('show');
+        void modal.offsetWidth;      // force reflow so the transition always runs
+        modal.classList.add('show');
       }
-    }); 
+
+      // 3. Attach click listeners to each card
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+          // optional: grab card.dataset.projectId and inject dynamic content into your modal here
+          showModal();
+        });
+      });
+
+      // 4. Close logic stays the same
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') modal.classList.remove('show');
+      });
+      window.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.remove('show');
+      });
+    });
 </script>
 
 </body>
