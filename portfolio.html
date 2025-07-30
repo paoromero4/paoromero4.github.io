@@ -40,8 +40,15 @@
                                 </div>
                             </div>
                             <!--project 1-->
-               				<div class="iso-box html mobile col-lg-4 col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img3.jpg" alt="portfolio img"></a>
+               				<div class="iso-box html mobile col-lg-4 col-md-4 col-sm-6 col-xs-12 project-card"
+                                        data-project-id="project2">
+               				 	<img src="images/portfolio-img3.jpg" alt="portfolio img"/>
+                                <div class="overlay">
+                                    <div class="text">
+                                        <h3>Project Name3</h3>
+                                        <p>Jan 2023</p>
+                                    </div>
+                                </div>
                				</div>
                             <!--project 1-->
                				<div class="iso-box wordpress col-lg-4 col-md-4 col-sm-6 col-xs-6">
@@ -78,11 +85,27 @@
 </div>
 
 
-<!-- Modal structure -->
+<!-- Modal templates -->
+<div id="modal-templates" style="display: none;">
+  <template data-project-id="project1">
+    <h2>Project Name1</h2>
+    <p>This was a fun robotics project where I built a line‑following bot.</p>
+  </template>
+  <template data-project-id="project2">
+    <h2>Project Name2</h2>
+    <p>A collaborative art piece made entirely in Photoshop and printed at gallery scale.</p>
+  </template>
+  <template data-project-id="project3">
+    <h2>Project Name3</h2>
+    <p>A corah rah rah ade entirely in Photoshop and printed at gallery scale.</p>
+  </template>
+  <!-- repeat one <template> per project -->
+</div>
+
+
+<!-- GENERIC modal shell -->
 <div id="customModal" class="modal-background">
   <div class="modal-inside">
-    <h2>Text in a modal</h2>
-    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
     <button id="closeModal" class="close-button">Close</button>
   </div>
 </div>

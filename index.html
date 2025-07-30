@@ -321,32 +321,39 @@ http://www.templatemo.com/tm-472-blaster
 <!-- Modal JS -->
 <script>
   fetch('portfolio.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('portfolio').innerHTML = data;
+    .then(r => r.text())
+    .then(html => {
+      // 1. Inject the portfolio + templates
+      document.getElementById('portfolio').innerHTML = html;
 
-      // Now the modal exists, so add listeners
-      const modal = document.getElementById('customModal');
-      const closeBtn = document.getElementById('closeModal');
+      // 2. Grab the modal + template root
+      const modal     = document.getElementById('customModal');
+      const contentEl = modal.querySelector('.modal-inside');
+      const tplRoot   = document.getElementById('modal-templates');
+      const closeBtn  = document.getElementById('closeModal');
 
-       function showModal() {
+      // 3. Helper to show with reflow
+      function showModal() {
         modal.classList.remove('show');
-        void modal.offsetWidth;      // force reflow so the transition always runs
+        void modal.offsetWidth;
         modal.classList.add('show');
       }
 
-      // 3. Attach click listeners to each card
+      // 4. Wire up every card to its template
       document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', () => {
-          // optional: grab card.dataset.projectId and inject dynamic content into your modal here
+          const id  = card.dataset.projectId;
+          const tpl = tplRoot.querySelector(`template[data-project-id="${id}"]`);
+          contentEl.innerHTML = tpl
+            ? tpl.content.cloneNode(true).firstElementChild.outerHTML +
+              tpl.content.cloneNode(true).lastElementChild.outerHTML
+            : '<h2>Unknown project</h2><p>No info available.</p>';
           showModal();
         });
       });
 
-      // 4. Close logic stays the same
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('show');
-      });
+      // 5. Close logic
+      closeBtn.addEventListener('click', () => modal.classList.remove('show'));
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') modal.classList.remove('show');
       });
@@ -355,6 +362,7 @@ http://www.templatemo.com/tm-472-blaster
       });
     });
 </script>
+
 
 </body>
 </html>
