@@ -268,36 +268,60 @@ p {
 }
 
 /* Modal CSS */
-#modal {
-  display: none;
+.modal-backdrop {
+  display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent backdrop */
+  backdrop-filter: blur(2px);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
-#modal-content {
+.modal-content {
   background: white;
-  padding: 2em;
-  max-width: 600px;
-  max-height: 80%;
-  overflow-y: auto;
-  position: relative;
-  border-radius: 10px;
+  padding: 2rem;
+  border: 2px solid black;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+  animation: slideIn 0.3s ease-out forwards;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  border-radius: 8px;
 }
 
-#modal-close {
-  position: absolute;
-  top: 0.5em;
-  right: 0.8em;
-  font-size: 1.5em;
+.close-btn,
+.modal-trigger-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
+
+.close-btn:hover,
+.modal-trigger-btn:hover {
+  background: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; display: flex; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* All (1st) */
 .filter-wrapper li:nth-child(1) a:hover,
