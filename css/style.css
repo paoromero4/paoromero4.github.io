@@ -293,7 +293,11 @@ p {
   width: 80%;
   text-align: center;
   border-radius: 8px;
-  margin: auto;
+
+  position: absolute;    /* pull it out of normal flow */
+  top: 50%;              /* 50% down from the top of the backdrop */
+  left: 50%;             /* 50% in from the left of the backdrop */
+  transform: translate(-50%, -50%);  /* shift it back by half its own width & height */
 }
 
 .close-button,
