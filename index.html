@@ -318,5 +318,45 @@ http://www.templatemo.com/tm-472-blaster
   });
 </script>
 
+<!-- Modal JS -->
+<script>
+  fetch('portfolio.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('portfolio').innerHTML = data;
+
+      // Now the modal exists, so add listeners
+      const modal = document.getElementById('customModal');
+      const openBtn = document.getElementById('openModal');
+      const closeBtn = document.getElementById('closeModal');
+
+      if (modal && openBtn && closeBtn) {
+        // Fix: Force reflow before showing modal
+        openBtn.addEventListener('click', () => {
+          modal.classList.remove('show');
+          void modal.offsetWidth; // force reflow
+          modal.classList.add('show');
+        });
+
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('show');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+             modal.classList.remove('show');
+            }
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('show');
+            }
+        });
+
+      }
+    }); 
+</script>
+
 </body>
 </html>
