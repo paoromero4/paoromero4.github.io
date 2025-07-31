@@ -300,35 +300,32 @@ p {
   transform: translate(-50%, -50%);  /* shift it back by half its own width & height */
 }
 
-.close-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: black;
-  color: white;
+.modal-inside .close-button {
+  position: absolute;
+  top:-2px;
+  right: 1rem;
+  background: transparent;
+  color: #696969;
+  font-size: 40px;
+
+  font-family: "Atma", system-ui;
+  font-weight: 500;
+  font-style: normal;
+
   border: none;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-.close-button:hover {
-  background: #333;
+.modal-inside .close-button:hover {
+  color: #cacaca;
+  font-weight: 600;
 }
 
 .modal-background.show {
   opacity: 1;
   pointer-events: auto;
 }
-/*
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; display: flex; }
-}
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-*/
 
 /* All (1st) */
 .filter-wrapper li:nth-child(1) a:hover,

@@ -18,6 +18,9 @@ http://www.templatemo.com/tm-472-blaster
 
 	<!-- STYLESHEET CSS FILES -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/nivo-lightbox.css">
@@ -245,124 +248,10 @@ http://www.templatemo.com/tm-472-blaster
 <script src="js/nivo-lightbox.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
-
-<!-- TypewriterJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
-
-    <script>
-    const app = document.getElementById('typed-text');
-
-    const typewriter = new Typewriter(app, {
-        loop: true,
-        delay: 75,
-        deleteSpeed: 50
-    });
-
-    typewriter
-        .typeString(' Mechanical Engineer')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString(' MIT Undergraduate Student')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString(' Maker')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('n Undergraduate Researcher')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString(' Musician - Oboist')
-        .pauseFor(2000)
-        .deleteAll()
-        .typeString('n Assistant Shop Manager')
-        .pauseFor(2000)
-        .deleteAll()
-        .start();
-</script>
-
-<!--Contact me submission Formspree JS-->
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
-
-    const form = e.target;
-
-    // Use fetch to submit the form via AJAX
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = 'none';
-        document.getElementById('thank-you-message').style.display = 'block';
-        localStorage.setItem('submittedTime', Date.now());
-      } else {
-        alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert('Something went wrong!');
-    });
-  });
-
-  // Block form if submitted less than 5 minutes ago
-  window.addEventListener('DOMContentLoaded', () => {
-    const lastSubmit = localStorage.getItem('submittedTime');
-    if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('thank-you-message').style.display = 'block';
-    }
-  });
-</script>
-
-<!-- Modal JS -->
-<script>
-  fetch('portfolio.html')
-    .then(r => r.text())
-    .then(html => {
-      // 1. Inject the portfolio + templates
-      document.getElementById('portfolio').innerHTML = html;
-
-      // 2. Grab the modal + template root
-      const modal     = document.getElementById('customModal');
-      const contentEl = modal.querySelector('.modal-inside');
-      const tplRoot   = document.getElementById('modal-templates');
-      const closeBtn  = document.getElementById('closeModal');
-
-      // 3. Helper to show with reflow
-      function showModal() {
-        modal.classList.remove('show');
-        void modal.offsetWidth;
-        modal.classList.add('show');
-      }
-
-      // 4. Wire up every card to its template
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const id  = card.dataset.projectId;
-          const tpl = tplRoot.querySelector(`template[data-project-id="${id}"]`);
-          contentEl.innerHTML = tpl
-            ? tpl.content.cloneNode(true).firstElementChild.outerHTML +
-              tpl.content.cloneNode(true).lastElementChild.outerHTML
-            : '<h2>Unknown project</h2><p>No info available.</p>';
-          showModal();
-        });
-      });
-
-      // 5. Close logic
-      closeBtn.addEventListener('click', () => modal.classList.remove('show'));
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') modal.classList.remove('show');
-      });
-      window.addEventListener('click', e => {
-        if (e.target === modal) modal.classList.remove('show');
-      });
-    });
-</script>
-
+<script src="js/typewriter.js"></script>
+<script src="js/formspree.js"></script>
+<script src="js/modal.js"></script>
 
 </body>
 </html>
