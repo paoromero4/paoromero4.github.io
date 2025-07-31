@@ -18,10 +18,7 @@
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
-/*
-#portfolio img:hover {
-  opacity: 0.6;
-}*/
+
 /* FILTER CSS */
 .filter-wrapper {
     width: 100%;
@@ -132,6 +129,7 @@
 .modal-inside .close-button:hover {
   color: #cacaca;
   font-weight: 600;
+  transition: 0.2s linear;
 }
 
 
