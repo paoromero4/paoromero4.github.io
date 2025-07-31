@@ -22,13 +22,16 @@ fetch('portfolio.html')
         card.addEventListener('click', () => {
           const id  = card.dataset.projectId;
           const tpl = tplRoot.querySelector(`template[data-project-id="${id}"]`);
-          contentEl.innerHTML = tpl
-            ? tpl.content.cloneNode(true).firstElementChild.outerHTML +
-              tpl.content.cloneNode(true).lastElementChild.outerHTML
-            : '<h2>Unknown project</h2><p>No info available.</p>';
+          if (tpl) {
+            // Inject *all* of the template’s markup, including that middle <h2>
+            contentEl.innerHTML = tpl.innerHTML;
+          } else {
+            contentEl.innerHTML = '<h2>Unknown project</h2><p>No info available.</p>';
+          }
           showModal();
         });
       });
+
 
       // 5. Close logic
       closeBtn.addEventListener('click', () => modal.classList.remove('show'));
