@@ -48,6 +48,11 @@ p {
 	min-width: 34px;
 }
 
+#about p {
+  font-size: 20px;
+  margin: 20px;
+}
+
 /* start navigation */
 .custom-navbar {
     background: #ffffff;
