@@ -79,7 +79,7 @@
 
 /* Modal CSS */
 .modal-background {
-  display: flex;
+  display: block;
   opacity: 0;
   pointer-events: none;
   position: fixed;
@@ -155,7 +155,7 @@
 .modal-inside .pds-tag {
     /* Purpose, project Date, Skills used */
     font-size: 15px !important;
-    color: #c5b8cc;
+    color: #8f779c;
     margin-top: 25px;
 }
 
@@ -167,6 +167,10 @@
 
 .bottom-space {
     margin-bottom: 50px;
+}
+
+.modal-inside .row {
+    margin-top: 20px;
 }
 
 /* All (1st) */
