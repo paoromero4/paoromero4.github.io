@@ -5,13 +5,13 @@
 fetch('portfolio.html')
   .then(r => r.text())
   .then(html => {
-    // 1️⃣ Inject your portfolio + templates
+    // Inject my portfolio + templates
     document.getElementById('portfolio').innerHTML = html;
 
-    // 2️⃣ Grab the grid container
+    // Grab the grid container
     const isoContainer = document.querySelector('.iso-box-wrapper');
 
-    // 3️⃣ Wait for images to load *then* init Isotope
+    // Wait for images to load *then* init Isotope
     imagesLoaded(isoContainer, function() {
       const iso = new Isotope(isoContainer, {
         itemSelector: '.iso-box',
@@ -23,7 +23,7 @@ fetch('portfolio.html')
         }
       });
 
-      // 4️⃣ Wire up filter links
+      // Wire up filter links
       document.querySelectorAll('.filter-wrapper a')
         .forEach(link => {
           link.addEventListener('click', e => {
@@ -37,7 +37,7 @@ fetch('portfolio.html')
           });
         });
 
-      // 5️⃣ Wire up your modal logic
+      // Wire up my modal logic
       const modal     = document.getElementById('customModal');
       const bodyEl    = modal.querySelector('.modal-body');
       const tplRoot   = document.getElementById('modal-templates');
