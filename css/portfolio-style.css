@@ -114,7 +114,7 @@
 }
 
 .modal-inside .close-button {
-  position: absolute;
+  position: fixed;
   top:-2px;
   right: 1rem;
   background: transparent;
@@ -127,6 +127,7 @@
 
   border: none;
   cursor: pointer;
+  -webkit-overflow-scrolling: touch; /* ← enables smooth/touch scrolling on Safari */
 }
 
 .modal-inside .close-button:hover {
