@@ -44,9 +44,15 @@ fetch('portfolio.html')
       const closeBtn  = document.getElementById('closeModal');
 
       function showModal() {
+        document.body.classList.add('modal-open'); // lock background
         modal.classList.remove('show');
         void modal.offsetWidth;  // force reflow
         modal.classList.add('show');
+      }
+
+      function hideModal() {
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open'); // ← restore page scroll
       }
 
       document.querySelectorAll('.project-card')
@@ -63,9 +69,9 @@ fetch('portfolio.html')
           });
         });
 
-      closeBtn.addEventListener('click',      () => modal.classList.remove('show'));
+      closeBtn.addEventListener('click',      hideModal);
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') modal.classList.remove('show');
+        if (e.key === 'Escape') hideModal();
       });
       window.addEventListener('click', e => {
         if (e.target === modal) modal.classList.remove('show');

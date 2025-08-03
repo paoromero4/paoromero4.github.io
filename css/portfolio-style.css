@@ -100,7 +100,7 @@
   border: 0px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   max-width: 1200px;
-  width: 80%;
+  width: 90%;
   text-align: left;
   border-radius: 8px;
 
@@ -111,6 +111,8 @@
 
   max-height: 90vh;   /* modal won't exceed 90% of viewport height */
   overflow-y: auto;   /* scrolls if content is taller */
+  -webkit-overflow-scrolling: touch; /* ← enables smooth/touch scrolling on Safari */
+  overscroll-behavior: contain;
 }
 
 .modal-inside .close-button {
@@ -127,7 +129,6 @@
 
   border: none;
   cursor: pointer;
-  -webkit-overflow-scrolling: touch; /* ← enables smooth/touch scrolling on Safari */
 }
 
 .modal-inside .close-button:hover {
@@ -135,7 +136,6 @@
   font-weight: 600;
   transition: 0.2s linear;
 }
-
 
 .modal-background.show {
   opacity: 1;
@@ -177,6 +177,23 @@
 .modal-inside .row {
     margin-top: 20px;
 }
+
+/* media; images, google slides */
+.google-slides {
+  position: relative;
+  padding-bottom:60%;  /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  margin-top: 1rem;        /* a little breathing room */
+}
+.google-slides iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 
 .img-sm {
   height: 100%;
