@@ -257,7 +257,7 @@
   position: relative;
   display: inline-block;
   padding: 0.6em 1.4em;
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-weight: 500;
   color: #fff;
   background: #70438e;            /* your primary hue */
@@ -272,6 +272,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.12);
   background: #613a7b;            /* slightly darker on hover */
+  color: #fff
 }
 
 .btn-cool:active {
