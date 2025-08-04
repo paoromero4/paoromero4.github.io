@@ -443,3 +443,61 @@ footer {
     transition: all 0.3s ease-in-out;
     font-weight: 700 !important;
 }
+
+/* image gallery */
+.image-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gallery-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top; /* Removes any spacing below images */
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  user-select: none;
+}
+
+.gallery-arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.gallery-arrow.prev {
+  left: 10px;
+}
+
+.gallery-arrow.next {
+  right: 10px;
+}
+
+.gallery-dots {
+  display: none; /* Hide dots to remove white bar */
+}

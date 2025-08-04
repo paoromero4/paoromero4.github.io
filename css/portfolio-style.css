@@ -184,6 +184,14 @@
 	margin-top: 20px;
 }
 
+.my-caption {
+  text-align: center;
+}
+
+.my-caption figcaption {
+  margin-bottom:20px;
+
+}
 /* Media containers */
 .google-slides {
 	position: relative;
@@ -235,6 +243,8 @@
 .img-grid .grid-25 {
 	width: 25%;
 }
+
+
 
 /* Button */
 .btn-cool {
