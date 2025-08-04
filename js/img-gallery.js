@@ -1,23 +1,11 @@
-// Debug version with console logs
-console.log('Gallery script loaded!');
-
 class ImageGallery {
     constructor(galleryElement, options = {}) {
-        console.log('Creating gallery for element:', galleryElement);
-
         this.gallery = galleryElement;
         this.container = this.gallery.querySelector('.gallery-container');
         this.slides = this.gallery.querySelectorAll('.gallery-slide');
         this.prevBtn = this.gallery.querySelector('.gallery-arrow.prev');
         this.nextBtn = this.gallery.querySelector('.gallery-arrow.next');
         this.dotsContainer = this.gallery.querySelector('.gallery-dots');
-
-        console.log('Found elements:', {
-            container: this.container,
-            slides: this.slides.length,
-            prevBtn: this.prevBtn,
-            nextBtn: this.nextBtn
-        });
 
         // Options
         this.autoSlideInterval = options.autoSlideInterval || 3000;
@@ -32,7 +20,6 @@ class ImageGallery {
     }
 
     init() {
-        console.log('Initializing gallery...');
         this.createDots();
         this.setupEventListeners();
         this.updateGallery();
@@ -55,11 +42,8 @@ class ImageGallery {
     }
 
     setupEventListeners() {
-        console.log('Setting up event listeners...');
-
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', (e) => {
-                console.log('Previous button clicked');
                 e.preventDefault();
                 this.prevSlide();
             });
@@ -67,7 +51,6 @@ class ImageGallery {
 
         if (this.nextBtn) {
             this.nextBtn.addEventListener('click', (e) => {
-                console.log('Next button clicked');
                 e.preventDefault();
                 this.nextSlide();
             });
@@ -80,7 +63,6 @@ class ImageGallery {
 
     updateGallery() {
         const translateX = -this.currentSlide * 100;
-        console.log(`Moving to slide ${this.currentSlide}, translateX: ${translateX}%`);
 
         if (this.container) {
             this.container.style.transform = `translateX(${translateX}%)`;
@@ -96,38 +78,32 @@ class ImageGallery {
     }
 
     nextSlide() {
-        console.log('Next slide called');
         this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
         this.updateGallery();
         this.resetAutoSlide();
     }
 
     prevSlide() {
-        console.log('Previous slide called');
         this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
         this.updateGallery();
         this.resetAutoSlide();
     }
 
     goToSlide(slideIndex) {
-        console.log(`Going to slide ${slideIndex}`);
         this.currentSlide = slideIndex;
         this.updateGallery();
         this.resetAutoSlide();
     }
 
     startAutoSlide() {
-        console.log('Starting auto-slide');
         if (!this.enableAutoSlide) return;
         this.autoSlideTimer = setInterval(() => {
-            console.log('Auto-slide triggered');
             this.nextSlide();
         }, this.autoSlideInterval);
     }
 
     pauseAutoSlide() {
         if (this.autoSlideTimer) {
-            console.log('Pausing auto-slide');
             clearInterval(this.autoSlideTimer);
             this.autoSlideTimer = null;
         }
@@ -135,7 +111,6 @@ class ImageGallery {
 
     resumeAutoSlide() {
         if (this.enableAutoSlide && !this.autoSlideTimer) {
-            console.log('Resuming auto-slide');
             this.startAutoSlide();
         }
     }
@@ -145,7 +120,6 @@ class ImageGallery {
         this.resumeAutoSlide();
     }
 
-    // Public methods for external control
     destroy() {
         this.pauseAutoSlide();
         if (this.prevBtn) {
@@ -155,48 +129,56 @@ class ImageGallery {
             this.nextBtn.removeEventListener('click', this.nextSlide);
         }
     }
-
-    addSlide(imageUrl, altText = '') {
-        const slide = document.createElement('div');
-        slide.className = 'gallery-slide';
-        slide.innerHTML = `<img src="${imageUrl}" alt="${altText}">`;
-        this.container.appendChild(slide);
-
-        this.slides = this.gallery.querySelectorAll('.gallery-slide');
-        this.totalSlides = this.slides.length;
-        this.createDots();
-    }
-
-    removeSlide(index) {
-        if (index >= 0 && index < this.totalSlides) {
-            this.slides[index].remove();
-            this.slides = this.gallery.querySelectorAll('.gallery-slide');
-            this.totalSlides = this.slides.length;
-
-            if (this.currentSlide >= this.totalSlides) {
-                this.currentSlide = this.totalSlides - 1;
-            }
-
-            this.createDots();
-            this.updateGallery();
-        }
-    }
 }
 
-// Initialize all galleries when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, looking for galleries...');
-    const galleries = document.querySelectorAll('.image-gallery');
-    console.log(`Found ${galleries.length} galleries`);
+// Function to initialize galleries (can be called multiple times)
+function initializeGalleries() {
+    const galleries = document.querySelectorAll('.image-gallery:not([data-gallery-initialized])');
 
-    galleries.forEach((gallery, index) => {
-        console.log(`Initializing gallery ${index + 1}`);
+    galleries.forEach((gallery) => {
+        // Mark as initialized to prevent double-initialization
+        gallery.setAttribute('data-gallery-initialized', 'true');
+
         new ImageGallery(gallery, {
             autoSlideInterval: 3000,
             enableAutoSlide: true
         });
     });
+}
+
+// Initialize galleries when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeGalleries();
 });
 
-// Make ImageGallery available globally if needed
+// Also initialize galleries whenever new content is added to the page
+// This handles dynamically loaded content
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            // Check if any of the added nodes contain galleries
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1) { // Element node
+                    // Check if the node itself is a gallery
+                    if (node.classList && node.classList.contains('image-gallery')) {
+                        initializeGalleries();
+                    }
+                    // Check if the node contains galleries
+                    else if (node.querySelectorAll && node.querySelectorAll('.image-gallery').length > 0) {
+                        initializeGalleries();
+                    }
+                }
+            });
+        }
+    });
+});
+
+// Start observing changes to the document
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+// Make functions available globally
 window.ImageGallery = ImageGallery;
+window.initializeGalleries = initializeGalleries;
