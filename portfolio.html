@@ -76,8 +76,8 @@
                             </div>
                             <!--Spring loaded latching box-->
                				 <div class="iso-box people dont-fit col-md-3 col-sm-4 col-xs-6 project-card"
-                                        data-project-id="project6">
-               				 	<img src="images/portfolio-img6.jpg" alt="portfolio img"/>
+                                        data-project-id="latching-box">
+               				 	<img src="images/box1.png" alt="wooden box with laser engraved inscriptions and black top"/>
                                 <div class="overlay">
                                     <div class="text">
                                         <h3>Spring-Loaded Latching Box</h3>
@@ -87,8 +87,8 @@
                				 </div>
                             <!--SLA resin printing-->
                				<div class="iso-box move col-md-3 col-sm-4 col-xs-6 project-card"
-                                        data-project-id="project7">
-               				 	<img src="images/portfolio-img7.jpg" alt="portfolio img"/>
+                                        data-project-id="sla-printing">
+               				 	<img src="images/sla-curing.png" alt="3D printed parts curing under green UV light"/>
                                 <div class="overlay">
                                     <div class="text">
                                         <h3>SLA Resin Printing</h3>
@@ -102,7 +102,7 @@
                				 	<img src="images/portfolio-img8.jpg" alt="portfolio img"/>
                                 <div class="overlay">
                                     <div class="text">
-                                        <h3>Wooden Furniture</h3>
+                                        <h3>Wooden Furniture Projects</h3>
                                         <p>Jan 2025</p>
                                     </div>
                                 </div>
@@ -253,17 +253,17 @@
         <div class="row img-grid">
             <div class="col-md-4 col-xs-12 img-cell grid-33">
                     <img src="images/barge1.png"
-                        alt="mini barge, named Nessi"
+                        alt="mini barge, front view showing ramp and rack and pinion"
                         class="ms-3 mb-3" />
             </div>
             <div class="col-md-4 col-xs-12 img-cell grid-33">
                     <img src="images/barge2.png"
-                        alt="mini barge, named Nessi"
+                        alt="mini barge, isometric view showing motors and ramp"
                         class="ms-3 mb-3" />
             </div>
             <div class="col-md-4 col-xs-12 img-cell grid-33">
                     <img src="images/barge3.png"
-                        alt="mini barge, named Nessi"
+                        alt="mini barge, isometric view showing rack and pinion and white hooks with magnets"
                         class="ms-3 mb-3" />
             </div>
         </div>
@@ -316,7 +316,7 @@
                 <h3 class="pds-tag">PROJECT DATE</h3>
                 <p class="pds-text">March 2024</p>
                 <h3 class="pds-tag">SKILLS USED</h3>
-                <p class="pds-text bottom-space">CAD (Fusion360), 3D Printing, Metal Laser Cutting</p>
+                <p class="pds-text bottom-space">CAD (Fusion360), FDM 3D Printing, Metal Laser Cutting</p>
             </div>
 
             <div class="col-lg-4 col-md-6 col-xs-12">
@@ -484,14 +484,96 @@
 
     </template>
 
-    <template data-project-id="project6">
-        <h2>Project Name6</h2>
-        <p>A caaaoooooooooooooooodsvajvkahdaaaaaaaaaaand printed at gallery scale.</p>
+    <!--latching box-->
+    <template data-project-id="latching-box">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <h1>Spring Loaded Latching Box</h1>
+                <h3 class="pds-tag">PURPOSE</h3>
+                <p class="pds-text">For fun</p>
+                <h3 class="pds-tag">PROJECT DATE</h3>
+                <p class="pds-text">April 2024</p>
+                <h3 class="pds-tag">SKILLS USED</h3>
+                <p class="pds-text bottom-space">CAD (Fusion 360), FDM 3D Printing, Laser Cutting</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <img src="images/box1.png" alt="wooden box with laser cut inscriptions and a black lid">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h2>About</h2>
+                <p>
+                    I designed and fabricated this laser cut box for my boyfriend. It features a spring loaded latching mechanism,
+                    located in the 3D printed sliding lid, and uses springs from old pens.
+                    The box itself was made of stacked pieces of plywood wood-glued together and coupled using simple box joints.
+                </p>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <img src="images/box-glueing.png" alt="box held by clamps showing the glueing process">
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <img src="images/box-spring.png" alt="lid of the box showing the springs">
+            </div>
+        </div>
+
+        <div class="row my-caption">
+            <div class="col-xs-12 col-sm-4">
+                <img src="images/box-cad.png" alt="CAD model of box showing where spring mecahnism is housed">
+                <figcaption>
+                    CAD showing where the spring mechanism is housed. The red squiggly line represents the spring,
+                    which is housed inside the box circled in the dashed green line.
+                </figcaption>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <img src="images/box-cross-section.png" alt="cross section of the CAD">
+                <figcaption>
+                    Cross section of the CAD showing the "secret" compartment within the sliding lid. The latch is created by
+                    the piece circled in blue; it sticks out into the lid and held in place by the spring (not shown).
+                </figcaption>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <img src="images/box-arrow.png" alt="CAD of the box with arrows showing how the sliding lid moves">
+                <figcaption>
+                    The pink arrow shows the direction in which the lid slides out. The red arrows show the direction in which the
+                    latches are moved (one on each side, only one is shown) to "unlock" the lid.
+                </figcaption>
+            </div>
+        </div>
     </template>
 
-    <template data-project-id="project7">
-        <h2>Project Name7</h2>
-        <p>A caaaoooooooooooooooodsvajvkahdaaaaaaaaaaand printed at gallery scale.</p>
+    <!--SLA resin printing-->
+    <template data-project-id="sla-printing">
+        <h1>SLA Resin Printing</h1>
+        <h3 class="pds-tag">PURPOSE</h3>
+        <p class="pds-text">Internship</p>
+        <h3 class="pds-tag">PROJECT DATE</h3>
+        <p class="pds-text">July 2024</p>
+        <h3 class="pds-tag">SKILLS USED</h3>
+        <p class="pds-text bottom-space">SLA 3D Printing, Rapid Prototyping</p>
+
+        <p>
+            I set up and used Anycubic Photon M3 MAX and Saturn 4 Ultra resin printers with ABS-like resin to fulfill Campos Engineering’s prototyping needs.
+            Experimented with printer and curing settings while printing an army of penguins, a chubby dino, and many articulated animals, such as the capybara
+            shown below.
+        </p>
+
+        <div class="row img-grid">
+            <div class="col-xs-6 col-md-3 img-cell grid-25">
+                <img src="images/sla-curing.png" alt="3D printed parts curing under green UV light">
+            </div>
+            <div class="col-xs-6 col-md-3 img-cell grid-25">
+                <img src="images/sla-dino.png" alt="3D printed gray, chubby dinosaur in the palm of a hand">
+            </div>
+            <div class="col-xs-6 col-md-3 img-cell grid-25">
+                <img src="images/sla-penguins.png" alt="10 small 3D printed gray penguins">
+            </div>
+            <div class="col-xs-6 col-md-3 img-cell grid-25">
+                <img src="images/sla-capy.png" alt="3D printed gray articulated capybara">
+            </div>
+        </div>
     </template>
 
     <template data-project-id="project8">
