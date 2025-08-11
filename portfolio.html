@@ -140,13 +140,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--wood chiseling projects-->
+                            <!--wood carving projects-->
                				<div class="iso-box wood col-md-3 col-sm-4 col-xs-6 project-card"
-                                        data-project-id="project9">
-               				 	<img src="images/portfolio-img9.jpg" alt="portfolio img"/>
+                                        data-project-id="carving">
+               				 	<img src="images/flower.jpeg" alt="wooden flower with thin petals"/>
                                 <div class="overlay">
                                     <div class="text">
-                                        <h3>Wood Chiseling Projects</h3>
+                                        <h3>Wood Carving Projects</h3>
                                         <p>Dec 2024</p>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                                 </div>
                             </div>
                             <!--putz cat-->
-                            <div class="iso-box move wood col-md-3 col-sm-4 col-xs-6 project-card"
+                            <div class="iso-box wood col-md-3 col-sm-4 col-xs-6 project-card"
                                         data-project-id="cat-ptz">
                				 	<img src="images/cat-ptz.png" alt="outline of black cat hanging on a wall, with pi tau zeta leters traced on it"/>
                                 <div class="overlay">
@@ -559,9 +559,10 @@
         <p class="pds-text bottom-space">SLA 3D Printing, Rapid Prototyping</p>
 
         <p>
-            I set up and used Anycubic Photon M3 MAX and Saturn 4 Ultra resin printers with ABS-like resin to fulfill Campos Engineering’s prototyping needs.
-            Experimented with printer and curing settings while printing an army of penguins, a chubby dino, and many articulated animals, such as the capybara
-            shown below.
+            I learned how to set up and use the Anycubic Photon M3 MAX and Saturn 4 Ultra resin printers with ABS-like resin to fulfill Campos Engineering’s prototyping needs.
+            I experimented with printer and curing settings while printing an army of penguins, a chubby dino, and many articulated animals, such as the capybara
+            shown below. The purpose of printing these models was to learn about SLA 3D printing, so I got the CAD files of these figures from Thingiverse. The first image of the
+            parts in the UV curing container were parts for Campos Engineering's Water Warrior project.
         </p>
 
         <div class="row img-grid">
@@ -895,8 +896,68 @@
     </template>
 
     <!---->
-    <template data-project-id="project9">
+    <template data-project-id="carving">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Wood Carving Projects</h1>
+                <h3 class="pds-tag">PURPOSE</h3>
+                <p class="pds-text">For fun</p>
+                <h3 class="pds-tag">PROJECT DATE</h3>
+                <p class="pds-text">February 2024 - present</p>
+                <h3 class="pds-tag">SKILLS USED</h3>
+                <p class="pds-text bottom-space">Wood carving, chiseling, understanding wood properties, knife and tool safety, patience, precision</p>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-xs-12">
+                At first, I thought that carving a wooden bear would be a nice and easy Valentine's day gift. Although it did make for a lovely gift,
+                it was much more challenging than expected. It required a lot of patience and attention to detail, and an awareness of how the wood might behave
+                (such as knowing the direction of the grain and how the wood type affects the carving). These challenges made me fall in love with the craft,
+                so of course, I couldn't stop after just making a bear...
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <h2>Bear<p><i>February 2024</i></p></h2>
+                <p>
+                    This wooden bear was made using only a chisel and mallet. I did not have a drawing or guide or even a plan in mind.
+                    I am grateful to the shop staff in Metropolis, one of MIT's many makerspaces, where I was advised to clamp my workpiece
+                    and was given other tips on how to properly and safely use a chisel. My only goal was to make a bear, so even though I accidentally
+                    chiseled off one of the bear's ears, he still looked like a bear, so I accomplished my mission!
+                </p>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="image-gallery" data-gallery="gallery-bear">
+                    <div class="gallery-container">
+                        <div class="gallery-slide">
+                            <img src="images/bear-final.png" alt="final product of chiseled wooden bear, stained with dark brown color">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear1.jpeg" alt="half chiseled bear, underside view">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear2.jpeg" alt="half chiseled bear, front view">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear3.jpeg" alt="mostly chiseled bear, back view">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear4.jpeg" alt="mostly chiseled bear, front view, with facial features">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear5.jpeg" alt="completed chiseled bear, front view, lacking wood stain">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bear6.jpeg" alt="completed chiseled bear, back side view, lacking wood stain">
+                        </div>
+                    </div>
+                    <button class="gallery-arrow prev">&#8249;</button>
+                    <button class="gallery-arrow next">&#8250;</button>
+                    <div class="gallery-dots"></div>
+            </div>
+        </div>
     </template>
 
     <!---->
@@ -915,6 +976,9 @@
 <div id="customModal" class="modal-background">
   <div class="modal-inside">
     <div class="modal-body"></div>
+    <div class="bottom-close">
+      <button id="bottomCloseModal" class="bottom-close-btn" aria-label="Close modal">Close</button>
+    </div>
     <button id="closeModal" class="close-button" aria-label="Close modal">x</button>
   </div>
 </div>

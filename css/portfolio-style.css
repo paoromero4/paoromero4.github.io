@@ -244,8 +244,6 @@
 	width: 25%;
 }
 
-
-
 /* Button */
 .btn-cool {
 	position: relative;
@@ -273,6 +271,31 @@
 	transform: translateY(0);
 	box-shadow: 0 3px 6px rgba(0,0,0,0.08);
 	background: #4b2b60;
+}
+
+/* Bottom close button */
+.modal-inside .bottom-close {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-inside .bottom-close-btn {
+  background: transparent;
+  border: none;
+  color: #8a5aa3;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.modal-inside .bottom-close-btn:hover {
+  color: #5c3874;
 }
 
 /* Filter hover states */

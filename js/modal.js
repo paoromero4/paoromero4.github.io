@@ -42,6 +42,7 @@ fetch('portfolio.html')
       const bodyEl    = modal.querySelector('.modal-body');
       const tplRoot   = document.getElementById('modal-templates');
       const closeBtn  = document.getElementById('closeModal');
+      const bottomCloseBtn = document.getElementById('bottomCloseModal');
 
       function showModal() {
         document.body.classList.add('modal-open'); // lock background
@@ -70,6 +71,8 @@ fetch('portfolio.html')
         });
 
       closeBtn.addEventListener('click',      hideModal);
+      bottomCloseBtn.addEventListener('click', hideModal);
+
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') hideModal();
       });
