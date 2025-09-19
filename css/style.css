@@ -249,9 +249,41 @@ p {
 
 /* resume section */
 #resume {
-  text-align: center;
   background: #d1c5d6;
 }
+
+#resume .title {
+  text-align: center;
+}
+.resume-heading {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.resume-role {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.resume-date {
+  float: right;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #666;
+}
+.resume-list {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  margin-bottom: 24px;
+}
+.resume-list li {
+  margin-bottom: 6px;
+  line-height: 1.5em;
+}
+
 
 /* contact section */
 #contact {
