@@ -313,18 +313,43 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <h2>Power Train</h2>
+                <h2>Power Train (for Climbing)</h2>
             </div>
             <div class="col-xs-12 col-sm-8">
                 <p>
-                    I used a parallel shaft gearbox with a Bilda Torque servo driving the main shaft at a 2:1 gear ratio and a 217 Torque LDO motor at a 1:1 ratio.
-                    Since the motors had different specs, I drove them at different ratios so that they would drive the output shaft at the same speed. I used timing belts and tightened them with delrin
-                    wedges to synchronize the movement of the crank and slider arms. The delrin wedges prevented the pulleys from slipping during higher power moments, slight miscalculations in timing pulley distances during
+                    I used a parallel shaft gearbox with two Bilda Torque servos in continuous mode driving the main shaft at a 2:1 gear ratio. I controlled these motors remotely using a Bilda controller.
+                    I selected these motors and configuration because they were the motors that supplied the highest amount of torque that I had available, and I was somewhat constrained with my chasses.
+                    I originally designed for one motor in a different configuration, so when I needed to add a second motor due to the high friction in the mechanism,
+                    I was limited by the size of the chassis I had already fabricated. This was one of the many instances where I learned of the importance of <b>design for manufacturing.</b>
+                    I could have designed with adding a second motor in mind, but instead I had to manufacture something after I designed it.
+                </p>
+                <p>
+                    I used timing belts and tightened them with delrin wedges to synchronize the movement of the crank and slider arms.
+                    The delrin wedges prevented the pulleys from slipping during higher power moments, slight miscalculations in timing pulley distances during
                     the design process, and stretching of the belt rubber over time.
                 </p>
             </div>
             <div class="col-xs-6 col-sm-4">
                 <img src="images/powertrain.jpeg" alt="notebook page of the power train with an image of the robot's power train and description">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Driving</h2>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <img src="images/beckeback.jpeg" alt="back view of robot with both the driving chassis and climbing bot">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <p>
+                    For the competition, all robots had to begin in a starting box on the gameboard. So, I needed my robot to be able to approach and begin climbing the wall without directly placing it there.
+                    To minimize the weight of the climber bot, I designed a separate driving bot, or the "chauffeur" to drive the climber to the base of the wall. I connected these motors to the same remote controller
+                    as for my climber, so I only had to use one controller for both robots.
+                </p>
+                <p>
+                    The robot was driven by two speed servos in continuous mode, one for each wheel, and used skid steering with two delrin nubs. I turned these delrin nubs on a lathe
+                    which provided sufficiently low friction so that the robot could still maneuver and move.
+                </p>
             </div>
         </div>
 
