@@ -28,6 +28,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--16.632 line follower-->
+                            <div class="iso-box move col-md-3 col-sm-4 col-xs-6 project-card"
+                                        data-project-id="16632bot">
+               				 	<img src="images/16632bot.gif" alt="line following robot moving forward"/>
+                                <div class="overlay">
+                                    <div class="text">
+                                        <h3>Line Following Robot 2</h3>
+                                        <p>January 2025</p>
+                                    </div>
+                                </div>
+                            </div>
                             <!--2.679 final project-->
 
                             <!--2.00A barge: Nessi-->
@@ -141,7 +152,7 @@
                                 </div>
                             </div>
                             <!--wood carving projects-->
-               				<div class="iso-box wood col-md-3 col-sm-4 col-xs-6 project-card"
+               				<div class="iso-box wood shared col-md-3 col-sm-4 col-xs-6 project-card"
                                         data-project-id="carving">
                				 	<img src="images/flower.jpeg" alt="wooden flower with thin petals"/>
                                 <div class="overlay">
@@ -185,7 +196,7 @@
                                 </div>
                             </div>-->
                             <!--putz cat-->
-                            <div class="iso-box wood col-md-3 col-sm-4 col-xs-6 project-card"
+                            <div class="iso-box wood shared col-md-3 col-sm-4 col-xs-6 project-card"
                                         data-project-id="cat-ptz">
                				 	<img src="images/cat-ptz.png" alt="outline of black cat hanging on a wall, with pi tau zeta leters traced on it"/>
                                 <div class="overlay">
@@ -195,6 +206,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--next proj here-->
+
                			</div>
                		</div>
 
@@ -207,6 +220,55 @@
 
 <!-- Modal templates -->
 <div id="modal-templates" style="display: none;">
+    <!--16.632 line follower-->
+    <template data-project-id="16632bot">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <h1>Line Following Robot 2</h1>
+                <h3 class="pds-tag">PURPOSE</h3>
+                <p class="pds-text">Class Project</p>
+                <h3 class="pds-tag">PROJECT DATE</h3>
+                <p class="pds-text">Jan 2025</p>
+                <h3 class="pds-tag">SKILLS USED</h3>
+                <p class="pds-text">PID Control, Arduino (C++), Electronics and Sensor Integration</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>About</h2>
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    This project was for the class 16.632, Intro to Autonomous Machines. For one of the final assignments, students were tasked with programming
+                    a robot to follow a line using Proportional-Integral-Derivative (PID) Control. We were each given an identical chassis and parts, and our role was to
+                    integrate the sensors and hardware to program the robot.
+                </p>
+                <p>
+                    Each robot was driven by two LDO motors, one for each wheel, and had a ball caster at the back for maneuverability and low-friction contact.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                    class="embed-responsive-item"
+                    src="https://youtube.com/embed/kC333m5TZpA"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                </iframe></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><p>Check out my code I used for this project.</p>
+            <a href="https://github.com/paoromero4/16.632-PID-line-follower-bot"
+                class="btn btn-cool" target="_blank">
+                GitHub Repo
+            </a></div>
+        </div>
+    </template>
     <!--east campus fort build 2024-->
     <template data-project-id="ec-build-25">
 
@@ -359,14 +421,13 @@
                 <h2>Clips from Competition</h2>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <iframe
-                    width="560"
-                    height="315"
+                <div class="embed-responsive embed-responsive-16by9"><iframe
+                    class="embed-responsive-item"
                     src="https://www.youtube.com/embed/LPMNIftYX1w"
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
                     allowfullscreen
-                ></iframe>
+                ></iframe></div>
             </div>
         </div>
         <div class="row">
@@ -1029,7 +1090,7 @@
         <div class="row my-caption">
             <div class="col-xs-6 col-md-3">
                 <img src="images/sticky_dwg.png" alt="sticky note with ring drawing dimensions">
-                <figcaption>My drawing; the ID ended up 0.5mm larger than drawn in order to perfectly fit my boyfriend's middle finger.</figcaption>
+                <figcaption>My drawing; the ID ended up 0.5mm larger than drawn in order to perfectly fit my friend's middle finger.</figcaption>
             </div>
             <div class="col-xs-6 col-md-3">
                 <img src="images/ring-chuck.jpeg" alt="ring clasped onto a ring mandrel">
