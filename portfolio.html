@@ -231,7 +231,7 @@
             </div>
 
             <div class="col-md-4 col-sm-6 col-xs-12 d-flex">
-                <img src=""
+                <img src="images/BeckE.jpeg"
                     alt="Wall Climbing Robot"
                     class="float-end h-100 w-auto rounded" />
             </div>
@@ -264,14 +264,67 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <p>
-                    coming soon!
+                    The wall I wanted to climb featured small ledges my robot could grip to haul itself up, so I made many quick-and-dirty cardboard prototypes to test different mechanisms--all featuring a claw that gripped the ledges.
+                    None of the 10+ cardboard prototypes provided a solution (see two on the image right); instead, they each showed me what did not work. So, thinking this could be a linkage problem,
+                    I used <a href="https://www.motiongen.io" target="_blank" rel="noopener noreferrer">MotionGen.io</a> to simulate
+                    the dynamics of different linkage systems (see farther right image for a couple of the linkage combinations I simulated).
+                </p>
+                <p>
+                    The MotionGen rabbit hole led to another failed prototype, so I took a step back. I then realized that perhaps a <b>crank and slider mechanism</b> could be the solution: ultimately the robot needs a mechanism to pull itself up,
+                    and a crank and slider mechanism could provide that linear motion to achieve that. See my first prototype of this mechanism in the image below.
                 </p>
             </div>
             <div class="col-xs-6 col-md-3">
-                <img src="" alt="">
+                <img src="images/cardboardprototype.jpeg" alt="picture of notebook page with two cardboard prototypes to achieve up/down motion">
             </div>
             <div class="col-xs-6 col-md-3">
-                <img src="" alt="">
+                <img src="images/motiongen.jpeg" alt="two linkage systems in a simulator, with the linkage paths visible in blue lines">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 my-caption">
+                <img src="images/crankslider.jpg" alt="picture of notebook page of crank and slider mechanism, 2 pics of robot on wall and sketch of mechanism">
+                <figcaption>The first robot prototype using the crank and slider mechanism.</figcaption>
+            </div>
+            <div class="col-xs-4 my-caption">
+                <img src="images/math2.jpeg" alt="notebook pic of using virtual work to estimate the necessary torque for crank and slider mechanism">
+                <figcaption>Using virtual work to estimate the torque needed to actuate the mechanism.</figcaption>
+            </div>
+            <div class="col-xs-4 my-caption">
+                <img src="images/math3.jpeg" alt="using desmos to estimate necessary force and torque">
+                <figcaption>Using desmos to find the local maxima (maximum force) for my driving linkage.</figcaption>
+            </div>
+            <div class="col-xs-12">
+                <p>
+                    The crank and slider mechanism combined with two passive hooks to latch onto the lower ledge of the wall <b>verified my design requirements</b>
+                    because it allowed for continuous upward movement and was easily controllable. This mechanism included two crank and sliders working in tandem; let's call them the active arms, one of each side of the robot.
+                    Once these arms were fully retracted, the passive hooks would hook onto the lower ledge. Then, while the active arms extend, the robot would support itself with
+                    the passive hooks and the lower edges of the robot chassis to provide stability.
+                </p>
+                <p>
+                    I manufactured this mechanism by manually <b>milling</b> the delrin arms, <b>turning</b> the delrin standoffs, and <b>laser cutting</b> the other metal linkages, chassis, passive hooks,
+                    and metal guides in which the delrin arms slide through. I selected delrin for the arms and metal for their guides to <b>minimize friction</b> in the mechanism.
+                </p>
+                <p>
+                    Since I wanted the active arms to work in parallel, I needed to drive them in sync, or else there could be unwanted swinging and hinder the climbing.
+                    I also needed to be sure that my motors and battery could provide the necessary torque to actuate the arms and pull up the robot. This brings me to my power train.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Power Train</h2>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <p>
+                    I used a parallel shaft gearbox with a Bilda Torque servo driving the main shaft at a 2:1 gear ratio and a 217 Torque LDO motor at a 1:1 ratio.
+                    Since the motors had different specs, I drove them at different ratios so that they would drive the output shaft at the same speed. I used timing belts and tightened them with delrin
+                    wedges to synchronize the movement of the crank and slider arms. The delrin wedges prevented the pulleys from slipping during higher power moments, slight miscalculations in timing pulley distances during
+                    the design process, and stretching of the belt rubber over time.
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <img src="images/powertrain.jpeg" alt="notebook page of the power train with an image of the robot's power train and description">
             </div>
         </div>
 
