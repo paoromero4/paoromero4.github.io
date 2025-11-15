@@ -1,9 +1,15 @@
 document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
+
+    // Check if submitted recently
+    const lastSubmit = localStorage.getItem('submittedTime');
+    if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
+      alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
+      return; // Stop here
+    }
 
     const form = e.target;
 
-    // Use fetch to submit the form via AJAX
     fetch(form.action, {
       method: form.method,
       body: new FormData(form),
@@ -15,12 +21,13 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         document.getElementById('thank-you-message').style.display = 'block';
         localStorage.setItem('submittedTime', Date.now());
       } else {
-        alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
+        // More specific error handling
+        alert('There was a problem submitting your form. Please try again later.');
       }
     })
     .catch(error => {
       console.error(error);
-      alert('Something went wrong!');
+      alert('Something went wrong! Please check your internet connection and try again.');
     });
   });
 
