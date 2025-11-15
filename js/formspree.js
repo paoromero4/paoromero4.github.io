@@ -40,14 +40,11 @@
 //   //   }
 //   // });
 
-
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Check if submitted recently
     const lastSubmit = localStorage.getItem('submittedTime');
     console.log('lastSubmit value:', lastSubmit);
-    console.log('Time difference:', Date.now() - lastSubmit);
 
     if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
       alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
@@ -64,17 +61,26 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     })
     .then(response => {
       console.log('Response status:', response.status);
-      return response.json(); // Get the actual error message
+      console.log('Response ok:', response.ok);
+
+      // Get the actual error message from Formspree
+      return response.json().then(data => {
+        console.log('Full response from Formspree:', data);
+        return { response, data };
+      });
     })
-    .then(data => {
-      console.log('Response data:', data);
-      if (data.ok || data.success) {
+    .then(({ response, data }) => {
+      if (response.ok) {
         form.style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';
         localStorage.setItem('submittedTime', Date.now());
       } else {
-        console.log('Error from Formspree:', data.error || data.errors);
-        alert('There was a problem submitting your form. Please try again later.');
+        console.error('Formspree error details:', data);
+        alert('Error: ' + (data.error || data.errors || 'Unknown error'));
       }
     })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      alert('Something went wrong! Please check your internet connection and try again.');
+    });
 });
