@@ -31,11 +31,11 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     });
   });
 
-  // Block form if submitted less than 5 minutes ago
-  window.addEventListener('DOMContentLoaded', () => {
-    const lastSubmit = localStorage.getItem('submittedTime');
-    if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('thank-you-message').style.display = 'block';
-    }
-  });
+  // // Block form if submitted less than 5 minutes ago
+  // window.addEventListener('DOMContentLoaded', () => {
+  //   const lastSubmit = localStorage.getItem('submittedTime');
+  //   if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
+  //     document.getElementById('contact-form').style.display = 'none';
+  //     document.getElementById('thank-you-message').style.display = 'block';
+  //   }
+  // });
