@@ -44,7 +44,6 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     e.preventDefault();
 
     const lastSubmit = localStorage.getItem('submittedTime');
-    console.log('lastSubmit value:', lastSubmit);
 
     if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
       alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
@@ -52,35 +51,37 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     }
 
     const form = e.target;
-    console.log('About to fetch:', form.action);
 
     fetch(form.action, {
       method: form.method,
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     })
-    .then(response => {
+    .then(async response => {
       console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
 
-      // Get the actual error message from Formspree
-      return response.json().then(data => {
-        console.log('Full response from Formspree:', data);
-        return { response, data };
-      });
-    })
-    .then(({ response, data }) => {
+      // Try to get response as text first
+      const text = await response.text();
+      console.log('Raw response text:', text);
+
+      // Try to parse as JSON
+      try {
+        const data = JSON.parse(text);
+        console.log('Parsed JSON:', data);
+      } catch (e) {
+        console.log('Not valid JSON');
+      }
+
       if (response.ok) {
         form.style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';
         localStorage.setItem('submittedTime', Date.now());
       } else {
-        console.error('Formspree error details:', data);
-        alert('Error: ' + (data.error || data.errors || 'Unknown error'));
+        alert('Form submission blocked by Formspree (403 error)');
       }
     })
     .catch(error => {
       console.error('Fetch error:', error);
-      alert('Something went wrong! Please check your internet connection and try again.');
+      alert('Something went wrong!');
     });
 });
