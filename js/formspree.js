@@ -39,7 +39,6 @@
 //   //     document.getElementById('thank-you-message').style.display = 'block';
 //   //   }
 //   // });
-
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -57,31 +56,27 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     })
-    .then(async response => {
+    .then(response => {
       console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      console.log('About to read response text...');
 
-      // Try to get response as text first
-      const text = await response.text();
-      console.log('Raw response text:', text);
+      response.text().then(text => {
+        console.log('Raw response text:', text);
+      });
 
-      // Try to parse as JSON
-      try {
-        const data = JSON.parse(text);
-        console.log('Parsed JSON:', data);
-      } catch (e) {
-        console.log('Not valid JSON');
-      }
-
+      return response;
+    })
+    .then(response => {
       if (response.ok) {
         form.style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';
         localStorage.setItem('submittedTime', Date.now());
       } else {
-        alert('Form submission blocked by Formspree (403 error)');
+        alert('Form submission blocked (403)');
       }
     })
     .catch(error => {
       console.error('Fetch error:', error);
-      alert('Something went wrong!');
     });
 });
