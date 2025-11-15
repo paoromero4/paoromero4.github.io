@@ -3,8 +3,8 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
 
     // Check if submitted recently
     const lastSubmit = localStorage.getItem('submittedTime');
-    if (lastSubmit && Date.now() - lastSubmit < 5 * 60 * 1000) {
-      alert('You have already submitted this form once. If you would like to send another message please wait 5 minutes.');
+    if (lastSubmit && Date.now() - lastSubmit < 1 * 60 * 1000) {
+      alert('You have already submitted this form once. If you would like to send another message please wait 1 minute.');
       return; // Stop here
     }
 
@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     });
   });
 
-  // Block form if submitted less than 5 minutes ago
+  // Block form if submitted less than 1 minutes ago
   window.addEventListener('DOMContentLoaded', () => {
     const lastSubmit = localStorage.getItem('submittedTime');
     if (lastSubmit && Date.now() - lastSubmit < 1 * 60 * 1000) {
