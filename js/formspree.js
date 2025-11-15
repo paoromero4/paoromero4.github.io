@@ -64,18 +64,17 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     })
     .then(response => {
       console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-
-      if (response.ok) {
+      return response.json(); // Get the actual error message
+    })
+    .then(data => {
+      console.log('Response data:', data);
+      if (data.ok || data.success) {
         form.style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';
         localStorage.setItem('submittedTime', Date.now());
       } else {
+        console.log('Error from Formspree:', data.error || data.errors);
         alert('There was a problem submitting your form. Please try again later.');
       }
     })
-    .catch(error => {
-      console.error('Fetch error:', error);
-      alert('Something went wrong! Please check your internet connection and try again.');
-    });
 });
