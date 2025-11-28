@@ -26,7 +26,10 @@ h1,h2,h3,h4 {
 .subheading {
 	font-size: 14px;
 	font-weight: bold;
-	padding-bottom: 60px;
+  width: 90%;
+	text-align: center;
+	margin: 0 auto;
+  padding-bottom: 60px;
 }
 .bold {
 	font-weight: bold;
@@ -257,6 +260,16 @@ p {
 	transition: all 0.4s ease-in-out;
 }
 
+#teach .project-card img{
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#teach .project-card .overlay {
+    border-radius: 10px;
+}
+
+
 /* resume section */
 #resume {
   background: #d1c5d6;
@@ -344,7 +357,10 @@ p {
 
 /* footer section */
 footer {
-  background: url('../images/footer-bg.jpg') no-repeat;
+  background: url('../images/hike-bg.jpeg') no-repeat;
+  /* background-color: rgba(219, 219, 219, .5);
+  background-blend-mode: multiply; */
+  /* filter: brightness(0.6); */
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -364,7 +380,7 @@ footer {
 }
 .social-icon li a {
   border-radius: 50%;
-  color: #303030;
+  color: #d8d8d8;
   font-size: 32px;
   width: 80px;
   height: 80px;
@@ -376,7 +392,7 @@ footer {
   margin-right: 10px;
 }
 .social-icon li a:hover {
-  background: #b698c4;
+  background: #8d689e;
 }
 
 /* copyright section */

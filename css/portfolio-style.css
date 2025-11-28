@@ -90,6 +90,20 @@
 	font-size: 18px;
 }
 
+/* teach section project cards */
+#teach .project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+#teach .project-card img {
+    width: 100%;
+    height: 220px;     /* pick a height you like */
+    object-fit: cover; /* prevents distortion */
+    display: block;
+}
+
+
 /* Modal */
 .modal-background {
 	display: block;
@@ -157,6 +171,7 @@
 
 .modal-inside h2 {
 	font-size: 30px;
+
 }
 
 .modal-inside p {
@@ -166,6 +181,13 @@
 
 .modal-inside .pds-tag {
 	font-size: 15px !important;
+	color: #8a5aa3;
+	margin-top: 25px;
+	line-height: 0.5;
+}
+
+.modal-inside .t-tag {
+	font-size: 20px !important;
 	color: #8a5aa3;
 	margin-top: 25px;
 	line-height: 0.5;
