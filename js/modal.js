@@ -87,6 +87,17 @@ fetch('teach.html')
   });
 
 // =====================
+// LOAD RESUME SECTION
+// =====================
+fetch('resume.html')
+  .then(r => r.text())
+  .then(html => {
+    // Inject resume content
+    document.getElementById('resume').innerHTML = html;
+  })
+  .catch(err => console.error('Error loading resume:', err));
+
+// =====================
 // SHARED MODAL HANDLER
 // =====================
 function setupModalHandlers(sectionId, templateSelector) {
