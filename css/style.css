@@ -154,7 +154,7 @@ p {
 }
 
 #home {
-  background: url('../images/home.jpeg') no-repeat;
+  background: url('../images/main/home.jpeg') no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -492,7 +492,7 @@ p {
 
 /* footer section */
 footer {
-  background: url('../images/hike-bg.jpeg') no-repeat;
+  background: url('../images/main/hike-bg.jpeg') no-repeat;
   /* background-color: rgba(219, 219, 219, .5);
   background-blend-mode: multiply; */
   /* filter: brightness(0.6); */
@@ -692,4 +692,25 @@ footer {
 
 .gallery-dots {
   display: none; /* Hide dots to remove white bar */
+}
+
+.blog-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #8760a1;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-button:hover {
+  background-color: #a17cba;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
 }
