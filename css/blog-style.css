@@ -154,13 +154,15 @@ body {
 }
 
 .blog-post-content {
-  /* font-size: 1.1rem;
-  line-height: 1.8; */
-  color: #333;
+  color: #1c1c1c;
 }
 
 .blog-post-content p {
+  letter-spacing: 0.4px;
+  line-height: 25px;
   margin-bottom: 1.5rem;
+  font-size: 17px;
+  font-weight: 300;
 }
 
 .blog-post-content h2 {
